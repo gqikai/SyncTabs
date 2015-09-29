@@ -24,13 +24,7 @@
 				Tasks.$registDiv.style.display="inline";
 			},true);
 			
-//			Tasks.$usernameButton.addEventListener('click',function(){
-//				localStorage.username = document.getElementById("usernameText").value;
-//				var tr = document.getElementById('usernameButton');
-//				tr.parentNode.removeChild(tr);
-//				document.getElementById('usernameText').readOnly = true;
-//				//alert(localStorage.username);
-//			},true);
+
 			
 			Tasks.$loginButton.addEventListener('click',function(){
 				hideAll();

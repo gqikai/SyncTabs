@@ -137,7 +137,7 @@
 			},true);
 			//alert(localStorage.username);
 			if(localStorage.username != 'null' && localStorage.username != 'undefined'){
-				document.getElementById('usernameText').innerHTML = localStorage.username;
+				document.getElementById('usernameText').innerHTML = localStorage.username + "£¨ÒÑµÇÂ¼£©";
 				document.getElementById('urlText').innerHTML = "qikai.win/" + localStorage.username + ".html";
 				//var tr = document.getElementById('usernameButton');
 				//tr.parentNode.removeChild(tr);
