@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	div {width: 300px;}
+	.top {width:80px; }
+	input {width:200px;}
+	button{width:80px height:25px;}
+</style>
+</head>
+
+<body>
+	
+<div>
+<button class="top" id="syncButton" >点击同步</button>
+<button class="top" id="registButton">点击注册</button>
+<button class="top" id="loginButton">点击登录</button>
+</div>
+
+<div id = registDiv> 
+	<form> 
+		<fieldset > 
+		<legend>注册</legend> 
+		<table width=100% > 
+		<tbody> 
+		<tr >
+			<td>姓 名：</td> 
+			<td><input type="text" id="registUsername" name="username" value="zhangSan"></td> 
+		</tr> 
+		<tr>
+			<td>密 码：</td> 
+			<td><input id="registPassword" type="password" name="password" value="111111"/></td> 
+		</tr> 
+		<tr>
+			<td>邮 箱：</td> 
+			<td class="right"><input type="email" id="email" name="email" value="zhangSan@126.com"></td> 
+		</tr> 
+		</tbody> 
+		</table> 
+			<button id="registSubmit">注册</button>
+		</fieldset> 
+		</form> 			
+</div> 
+
+<div id="loginDiv"> 
+	<form class="f1" action="" method="post" > 
+	<fieldset > 
+	<legend>登陆</legend> 
+	<table width=100% > 
+	<tbody> 
+		<tr >
+			<td>姓 名：</td> 
+			<td><input type="text" id="loginUsername" name="username" value="zhangSan"></td> 
+		</tr> 
+		<tr>
+			<td>密 码：</td> 
+			<td><input id="loginPassword" type="password" name="password" value="111111"/></td> 
+		</tr> 
+	</tbody> 
+	</table> 	
+		<button id="loginSubmit">登录</button> 
+	</fieldset> 
+	</form> 
+</div> 
+
+<div id = msgDiv> 
+	<fieldset> 
+	<legend>信息</legend> 
+	<table width=100% > 
+	<tbody> 
+	<tr>
+	<td>用户名：</td> 
+	<td id="usernameText"></td> 
+	</tr> 
+	
+	<tr>
+	<td>标签页网址</td> 
+	<td id="urlText"></td>
+	</tr> 
+	</tbody> 
+	</table> 
+	</fieldset> 
+</div> 
+
+<script src="json.js" type="text/javascript"></script>
+<script charset="gb2312" src="popup.js" type="text/javascript"></script>
+
+</body>
+</html>
