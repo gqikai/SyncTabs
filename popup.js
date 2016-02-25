@@ -2,7 +2,7 @@
 (function(){
 	var $=function(id){return document.getElementById(id);}
 	var Tasks = {
-		//´æ´¢dom
+		//å­˜å‚¨dom
 		$syncButton:$('syncButton'),
 		$registButton:$('registButton'),
 		$loginButton:$('loginButton'),
@@ -13,12 +13,12 @@
 		$loginSubmit:$('loginSubmit'),
 		$registSubmit:$('registSubmit'),
 		
-		//³õÊ¼»¯
+		//åˆå§‹åŒ–
 		init:function(){
-			//ÉèÖÃÒş²Ø
+			//è®¾ç½®éšè—
 			hideAll();
 			Tasks.$msgDiv.style.display="inline";
-			/*×¢²áÊÂ¼ş*/
+			/*æ³¨å†Œäº‹ä»¶*/
 			Tasks.$registButton.addEventListener('click',function(){
 				hideAll();
 				Tasks.$registDiv.style.display="inline";
@@ -33,7 +33,7 @@
 			
 			Tasks.$syncButton.addEventListener('click',function(){
 				if(localStorage.username == 'null'){
-					alert("ÊäÈëÓÃ»§Ãû");
+					alert("è¾“å…¥ç”¨æˆ·å");
 					}else{
 						//alert(localStorage.username);
 											hideAll();
@@ -42,7 +42,7 @@
 		        console.log(xhr.readyState);
 		        if(xhr.readyState == 4){
 		        	hideAll();
-		        	alert("Í¬²½³É¹¦");
+		        	alert("åŒæ­¥æˆåŠŸ");
 		        	//console.log("adfas");
 		        }
 	    		}
@@ -58,7 +58,7 @@
 							allUrl.push(tabs[i].url);
 							allTitle.push(tabs[i].title);
 							}
-						var reg=new RegExp("&","g"); //´´½¨ÕıÔòRegExp¶ÔÏó  
+						var reg=new RegExp("&","g"); //åˆ›å»ºæ­£åˆ™RegExpå¯¹è±¡  
 						var stringObj=allUrl.toJSONString() + "aaaaaaaaaa" + allTitle.toJSONString();  
 						var postBody=stringObj.replace(reg,"**********");
 						console.log(postBody);
@@ -82,9 +82,9 @@
 	        	if (xhr.responseText == "registSucceed") {
 	        		localStorage.username = document.getElementById("registUsername").value;
 	        		//document.getElementById('urlText').value = "qikai.win/" + localStorage.username + ".html";
-	        		alert("×¢²á³É¹¦");
+	        		alert("æ³¨å†ŒæˆåŠŸ");
 	        	}else{
-	        		alert("×¢²áÊ§°Ü£¬ÓÃ»§ÃûÒÑ´æÔÚ");
+	        		alert("æ³¨å†Œå¤±è´¥ï¼Œç”¨æˆ·åå·²å­˜åœ¨");
 	        		}
 	        }
     		}
@@ -113,9 +113,9 @@
 	        	if (xhr.responseText == "loginSucceed") {
 	        		localStorage.username = document.getElementById("loginUsername").value;
 	        		//document.getElementById('urlText').value = "qikai.win/" + localStorage.username + ".html";
-	        		alert("µÇÂ¼³É¹¦");
+	        		alert("ç™»å½•æˆåŠŸ");
 	        	}else{
-	        		alert("µÇÂ¼Ê§°Ü£¬Çë¼ì²éÓÃ»§ÃûºÍÃÜ");
+	        		alert("ç™»å½•å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç”¨æˆ·åå’Œå¯†");
 	        		}
 	        }
     		}
@@ -131,7 +131,7 @@
 			},true);
 			//alert(localStorage.username);
 			if(localStorage.username != 'null' && localStorage.username != 'undefined'){
-				document.getElementById('usernameText').innerHTML = localStorage.username + "£¨ÒÑµÇÂ¼£©";
+				document.getElementById('usernameText').innerHTML = localStorage.username + "ï¼ˆå·²ç™»å½•ï¼‰";
 				document.getElementById('urlText').innerHTML = "qikai.win/" + localStorage.username + ".html";
 				//var tr = document.getElementById('usernameButton');
 				//tr.parentNode.removeChild(tr);
