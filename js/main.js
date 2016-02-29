@@ -5,8 +5,16 @@
 $(document).ready(function(){
 
     $('#loginButton').click(function(){
-        $('.login').css("display","none");
-        $('.sync').css("display","block");
+
+                $.post("http://localhost/app/MainController.php", {
+                        username :  $("#loginUsername").val() ,
+                        content :  $("#loginPassword").val() ,
+                        method : "lgoin"
+                    }, function (data, textStatus){
+                        console.log(data);
+                    }
+                );
+
     });
     //
     //$('#registButton').click(function(){
@@ -14,10 +22,10 @@ $(document).ready(function(){
     //    $('.sync').css("display","block");
     //});
 
-    $('#toRegist').click(function(){
-        $('.login').css("display","none");
-        $('.regist').css("display","block");
-    });
+    //$('#toRegist').click(function(){
+    //    $('.login').css("display","none");
+    //    $('.regist').css("display","block");
+    //});
 
     $("#registForm").validate({
         rules: {
