@@ -8,21 +8,28 @@
 +background:#f9f9f9;
 }
 
-body {
-    font-size: 12px;
-    font-family: "微软雅黑";
-}
-.login, .regist{width: 400px; border: 1px solid #e5e5e5; border-radius: 5px;}
+body {font-size: 12px;font-family: "微软雅黑";}
+ul{margin:0; padding:0;}
+
+.login, .regist, .sync{width: 400px; border: 1px solid #e5e5e5; border-radius: 5px;}
 h2 {text-indent: 12px; color: #000; font-size: 12px; line-height: 34px; border-bottom: 1px solid #dbdbdb}
 em {color: #cc0d13;font-family: arial;font-size: 12px;}
 .form {width: 300px;padding: 15px 0 2px;border-bottom: 1px solid #f2f2f2;margin: 0 auto;}
-.form li{ height: 26px; vertical-align: middle; list-style: none;}
-.form span{float: left;}
+.form li{width: 300px; display: inline-block; height: 26px; vertical-align: middle; list-style: none;}
+.form li span{float: left;width: 80px; text-align: right;}
 .form .text {float: left;width: 87px;height: 17px;margin-right: 3px;border: 1px solid #dbdbdb;background: #f7f7f7;}
 .form .label{float: left;}
 .form input {float: left;}
 .form strong {float: left;font-weight: normal; padding-left: 3px; }
-.btn {width: 54px;height: 22px;border: none;background: #cb0000;color: #fff;font-family: '宋体';font-size: 12px;font-weight: bold;border-radius: 10px;}
-.regist .btn{width: 80px;}
+#loginButton, #registButton, #syncButton {width: 54px;height: 22px;border: none;background: #cb0000;color: #fff;font-family: '宋体';font-size: 12px;font-weight: bold;border-radius: 10px;}
 p {line-height: 32px;text-align: center;word-spacing: 20px;}
 p a {padding-left: 14px;background: url(../img/dot.gif) no-repeat 4px center;color: #666;text-decoration: none;}
+#registButton {width: 80px;margin-left: 80px;}
+.regist .text{width:120px;}
+.sync li {width: 300px; height: 40px;padding-left: 40px;}
+.sync li div{height:20px;}
+.sync li img{float:left; top:2px; width: 20px; height: 20px;}
+.tab_info div{width: 270px; float:right;padding-left: 9px;}
+.tab_info a{position:relative; top:0;line-height: 15px; cursor: pointer;font-size: 15px;color: #000;white-space: nowrap;display: block; width: 200px; overflow: hidden;}
+.tab_info p{line-height: 10px; cursor: pointer;font-size: 5px;color:hsl(0, 0%, 70%);text-align: left;margin: 0 0;white-space: nowrap;display: block; width: 250px; overflow: hidden;}
+#syncButton {width: 100px;position:relative; top: 10px;}

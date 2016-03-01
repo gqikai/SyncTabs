@@ -1,49 +1,119 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet" media="screen" />
 </head>
-
 <body>
-	<p id="beforeLogin">
-		<a id='regist'>regist</a> or <a id='login' >login</a>
-	</p>
-	
-	<p id="afterLogin" style="display:none">
-		welcome,<em id="username"></em>
-		<a id='logout' href=''>logout</a>
-		<button id="syncButton">sync</button>
-	</p>
+<div>
+    <font color="#FF0000" id="regist_name_msg"></font>
+    <font color="#FF0000" id="regist_pass_msg"></font>
+    <font color="#FF0000" id="regist_pass2_msg"></font>
+    <font color="#FF0000" id="regist_email_msg"></font>
+    <font color="#FF0000" id="regist_captcha_msg"></font>
+    <font color="#FF0000" id="login_name_msg"></font>
+    <font color="#FF0000" id="login_pass_msg"></font>
 
-<form id="registForm" style="display:block">
-	<fieldset>
-		<legend>regist</legend>
-		username: <input type="text" size="30" value='zhangSan'	id='regist_name'/><font color="#FF0000" id="regist_name_msg"></font><br />
-		password: <input type="password" value='111111' id='regist_pass'/><font color="#FF0000" id="regist_pass_msg"></font><br />
-		password again: <input type="password" size="30" value='111111'id='regist_pass2'/><font color="#FF0000" id="regist_pass2_msg"></font><br />
-		E-mail: <input type="text" size="30" value='zhangSan@126.com' id='email'/><font color="#FF0000" id="regist_email_msg"></font><br />
-		captcha:<input type="text" size="30" value='1111' id='captcha'/>
-		<img src="http://localhost/think/flyingtabs/go/index.php/User/captcha" alt="captcha" title="title" />
-		<font color="#FF0000" id="regist_captcha_msg"></font>
-		<br />
-		<input type='button' value='regist' id='registButton'/>
-	</fieldset>
-</form>
 
-<form id="loginForm" style="display:block">
-	<fieldset>
-		<legend>login</legend>
-		username: <input type="text" size="30" value='zhangSan' id='login_name'/><font color="#FF0000" id="login_name_msg"></font><br />
-		password: <input type="password" value='111111' id='login_pass'/><font color="#FF0000" id="login_pass_msg"></font><br />
-		<input type='button' value='login' id="loginButton"/>
-	</fieldset>
-</form>
+</div>
 
+
+<div class="login">
+    <h2 class="gradient"><em>LOGIN </em>登陆</h2>
+    <div class="form">
+        <form id="loginForm" action="#">
+            <ul>
+                <li>
+                    <span>用户名：</span>
+                    <input id='login_name' class="text" value='zhangSan' type="text">
+                    <label>
+                        <input type="checkbox">
+                        <strong>记住我</strong>
+                    </label>
+                </li>
+                <li>
+                    <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                    <input id='login_pass' class="text" type="password" value='111111' >
+                    <input  id="loginButton" class="btn" type="button" value="登陆">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <p>
+        <a id="toRegist" href="#">新用户注册</a>
+        <a href="#">忘记密码</a>
+    </p>
+</div>
+
+<div class="regist" >
+    <h2 class="gradient"><em>REGIST </em>注册</h2>;
+    <div class="form">
+        <form id="registForm" action="#">
+            <ul>
+                <li>
+                    <span><em>*</em> 用户名：</span>
+                    <input id='regist_name'	class="text" type="text" value='zhangSan'>
+                    <em></em>
+                </li>
+                <li>
+                    <span><em>*</em> 密&nbsp;&nbsp;&nbsp;码：</span>
+                    <input id='regist_pass'class="text" type="password" value='111111'>
+                </li>
+                <li>
+                    <span><em>*</em> 确认密码：</span>
+                    <input id='regist_pass2' class="text" type="password" value='111111'>
+                </li>
+                <li>
+                    <span><em>*</em> 邮&nbsp;&nbsp;&nbsp;箱：</span>
+                    <input  id='email' class="text" type="text value='zhangSan@126.com'">
+                </li>
+                <li>
+                    <span><em>*</em> 验证码：</span>
+                    <input id='captcha' class="text" type="text" value='1111'>
+                    <img src="http://localhost/think/flyingtabs/go/index.php/User/captcha" alt="captcha" title="title" />
+                </li>
+                <li>
+                    <input id='registButton' type="button" value="注册并登陆" id="registButton">
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+<div class="sync" >
+    <h2 class="gradient"><em>SYNC </em>同步标签  welcome,<em id="username"></em>
+        <a id='logout' href=''>logout</a></h2>
+
+    <div class="form">
+        <form id="syncForm" action="#">
+            <ul id="tabList">
+                <li>
+                    <div class="tab_info">
+                        <img src="https://reg.jd.com/favicon.ico">
+                        <div>
+                            <a class="title" href="#">狗东</a>
+                            <p>www.jd.com</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <input type="button" value="同步标签到云端" id="syncButton">
+        </form>
+    </div>
+    <p>
+        <a href="#">查看同步历史记录</a>
+    </p>
+</div>
+
+<script src="js/json.js" type="text/javascript"></script>
+<!--<script type="text/javascript" src="js/jquery-1.4.4.js"></script>-->
+<script src="js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+
+
+
+<!--<script src="js/jquery.validate.js" type="text/javascript"></script>-->
+<!--&lt;!&ndash;<script src="js/main.js" type="text/javascript"></script>&ndash;&gt;-->
+<!--<script src="js/jquery.metadata.js" type="text/javascript"></script>-->
 </body>
-<script src="json.js" type="text/javascript"></script>
-<script type="text/javascript" src="./jquery-1.4.4.js"></script>
-<script type="text/javascript" src="./popup.js"></script>
-
-
 </html>
