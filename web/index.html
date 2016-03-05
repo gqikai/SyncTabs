@@ -3,9 +3,9 @@
 <head>
     <title>Bootstrap 实力</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
     </nav>
 
 
-    <div class="login" class="panel panel-primary">
+    <div class="login panel panel-primary">
         <div class="panel-heading"><em>LOGIN </em>登陆</div>
         <div class="form panel-body">
             <form id="loginForm" action="#">
@@ -49,5 +49,31 @@
             <a href="#">忘记密码</a>
         </p>
     </div>
+
+
+    <div class="sync panel panel-default" >
+        <div class="panel-heading"><em>SYNC </em>同步标签  welcome,<em id="username"></em>
+            <a id='logout' href=''>logout</a></div>
+
+        <div class="form panel-body">
+
+                <ul id="tabList list-group">
+                    <li>
+                        <div class="tab_info list-group-item">
+                            <img src="https://reg.jd.com/favicon.ico">
+                            <div>
+                                <a class="title" href="#">狗东</a>
+                                <p>www.jd.com</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+        </div>
+        <p>
+            <a href="#">查看同步历史记录</a>
+        </p>
+    </div>
+
 </body>
 </html>
