@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 实力</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">注册</a></li>
+                <li><a href="#">登录</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="login" class="panel panel-primary">
+        <div class="panel-heading"><em>LOGIN </em>登陆</div>
+        <div class="form panel-body">
+            <form id="loginForm" action="#">
+                <ul>
+                    <li>
+                        <span>用户名：</span>
+                        <input id='login_name' class="text" value='zhangSan' type="text">
+                        <label>
+                            <input type="checkbox">
+                            <strong>记住我</strong>
+                        </label>
+                    </li>
+                    <li>
+                        <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                        <input id='login_pass' class="text" type="password" value='111111' >
+                        <input  id="loginButton" class="btn" type="button" value="登陆">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <p>
+            <a id="toRegist" href="#">新用户注册</a>
+            <a href="#">忘记密码</a>
+        </p>
+    </div>
+</body>
+</html>
