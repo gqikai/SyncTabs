@@ -1,79 +1,77 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 实力</title>
+    <title>SyncTabs</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">LOGO</a>
-        </div>
-        <div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">注册</a></li>
-                <li><a href="#">登录</a></li>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">LOGO</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="login panel panel-primary">
+    <div class="panel-heading"><em>LOGIN </em>登陆</div>
+    <div class="form panel-body">
+        <form id="loginForm" action="#">
+            <ul>
+                <li>
+                    <span>用户名：</span>
+                    <input id='login_name' class="text" value='zhangSan' type="text">
+                    <label>
+                        <input type="checkbox">
+                        <strong>记住我</strong>
+                    </label>
+                </li>
+                <li>
+                    <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                    <input id='login_pass' class="text" type="password" value='111111' >
+                    <input  id="loginButton" class="btn" type="button" value="登陆">
+                </li>
             </ul>
-        </div>
-    </nav>
-
-
-    <div class="login panel panel-primary">
-        <div class="panel-heading"><em>LOGIN </em>登陆</div>
-        <div class="form panel-body">
-            <form id="loginForm" action="#">
-                <ul>
-                    <li>
-                        <span>用户名：</span>
-                        <input id='login_name' class="text" value='zhangSan' type="text">
-                        <label>
-                            <input type="checkbox">
-                            <strong>记住我</strong>
-                        </label>
-                    </li>
-                    <li>
-                        <span>密&nbsp;&nbsp;&nbsp;码：</span>
-                        <input id='login_pass' class="text" type="password" value='111111' >
-                        <input  id="loginButton" class="btn" type="button" value="登陆">
-                    </li>
-                </ul>
-            </form>
-        </div>
-        <p>
-            <a id="toRegist" href="#">新用户注册</a>
-            <a href="#">忘记密码</a>
-        </p>
+        </form>
     </div>
+    <p>
+        <a id="toRegist" href="#">新用户注册</a>
+        <a href="#">忘记密码</a>
+    </p>
+</div>
 
 
-    <div class="sync panel panel-default" >
-        <div class="panel-heading"><em>SYNC </em>同步标签  welcome,<em id="username"></em>
-            <a id='logout' href=''>logout</a></div>
-
-        <div class="form panel-body">
-
-                <ul id="tabList list-group">
-                    <li>
-                        <div class="tab_info list-group-item">
-                            <img src="https://reg.jd.com/favicon.ico">
-                            <div>
-                                <a class="title" href="#">狗东</a>
-                                <p>www.jd.com</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-        </div>
-        <p>
-            <a href="#">查看同步历史记录</a>
-        </p>
+<div class="sync panel panel-default" >
+    <div class="panel-heading"><em>SYNC </em>同步标签  welcome,<em id="username"></em>
+        <a id='logout' href=''>logout</a>
     </div>
+    <ul class="tabList list-group">
+        <li class="list-group-item">
+            <div class="tab_info ">
+                <img src="https://reg.jd.com/favicon.ico">
+                <div>
+                    <a class="title" href="#">狗东</a>
+                    <p>www.jd.com</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <p>
+        <a href="#">查看同步历史记录</a>
+    </p>
+</div>
 
+<script src="js/popup.js"></script>
 </body>
 </html>
