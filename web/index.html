@@ -1,12 +1,60 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <title>SyncTabs</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller('Aaa',['$scope','$timeout',function($scope ,$timeout){
+
+            $scope.test = "hellll";
+
+            $("#loginButton").bind('click',function(){
+                $.ajax({
+                    url:"http://localhost/think/flyingtabs/go/index.php/User/login",
+                    data:
+                    "user_name=" + $("#login_name").val() +
+                    "&user_pass=" + $("#login_pass").val()
+                    ,
+                    dataType:'text',
+                    type:'post',
+                    success:function(msg){
+
+                        if(msg == 'login succeed!'){
+                            $.ajax({
+                                url:"http://localhost/think/flyingtabs/go/index.php/Tab/history",
+                                type:'get',
+                                xhrFields: {
+                                    withCredentials: true
+                                },
+                                crossDomain: true,
+                                success:function(msg){
+
+                                    $timeout(function(){
+                                        console.log(msg);
+                                        var tabData = eval('(' + msg + ')');
+                                        $scope.tabData = tabData;
+                                        $scope.test = 'poi';
+                                    });
+
+
+                                },
+                            });
+
+                        }
+                    },
+                });
+            });
+
+        }]);
+
+
+    </script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -52,17 +100,20 @@
 </div>
 
 
-<div id='tabsPanel' class="sync panel panel-default" >
-    <div class="panel-heading"><em>SYNC </em>同步标签  welcome,<em id="username"></em>
+<div id='tabsPanel' class="sync panel panel-default" ng-controller="Aaa">
+    <div class="panel-heading"><em>SYNC </em>同步标签  welcome,{{test}}<em id="username"></em>
         <a id='logout' href=''>logout</a>
     </div>
-    <ul class="tabList list-group">
-        <li class="list-group-item">
+    <ul class="tabList list-group" ng-repeat="(key,value) in tabData">
+
+        <div class="panel-heading">{{key}}
+        </div>
+        <li class="list-group-item" ng-repeat="tab in value">
             <div class="tab_info ">
-                <img src="https://reg.jd.com/favicon.ico">
+                <img src="">
                 <div>
-                    <a class="title" href="#">狗东</a>
-                    <p>www.jd.com</p>
+                    <a class="title" href="#">{{tab.title}}</a>
+                    <p>{{tab.url}}</p>
                 </div>
             </div>
         </li>
