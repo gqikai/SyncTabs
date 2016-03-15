@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="Aaa">
 <head>
     <title>SyncTabs</title>
     <meta charset="UTF-8">
@@ -8,121 +8,25 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/angular.min.js"></script>
-    <script>
-        var m1 = angular.module('myApp',[]);
-        m1.controller('Aaa',['$scope','$timeout',function($scope ,$timeout){
-
-            $scope.test = "hellll";
-
-            $("#loginButton").bind('click',function(){
-                $.ajax({
-                    url:"http://localhost/think/flyingtabs/go/index.php/User/login",
-                    data:
-                    "user_name=" + $("#login_name").val() +
-                    "&user_pass=" + $("#login_pass").val()
-                    ,
-                    dataType:'text',
-                    type:'post',
-                    success:function(msg){
-
-                        if(msg == 'login succeed!'){
-                            $.ajax({
-                                url:"http://localhost/think/flyingtabs/go/index.php/Tab/history",
-                                type:'get',
-                                xhrFields: {
-                                    withCredentials: true
-                                },
-                                crossDomain: true,
-                                success:function(msg){
-
-                                    $timeout(function(){
-                                        console.log(msg);
-                                        var tabData = eval('(' + msg + ')');
-                                        $scope.tabData = tabData;
-                                        $scope.test = 'poi';
-                                    });
-
-
-                                },
-                            });
-
-                        }
-                    },
-                });
-            });
-
-        }]);
-
-
-    </script>
+    <script src="http://cdn.bootcss.com/angular.js/1.2.9/angular-route.min.js"></script>
+    <script src="js/popup.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <a class="navbar-brand" href="#">LOGO</a>
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">注册</a></li>
-            <li><a href="#">登录</a></li>
+            <li class="active"><a href="#">注册{{name}}</a></li>
+            <li><a href="javascript:;" ng-click="$location.path('login')">登录</a></li>
+            <li><a href="javascript:;" ng-click="$location.path('history')">历史记录</a></li>
         </ul>
     </div>
 </nav>
-
-
-<div class="login panel panel-primary">
-    <div class="panel-heading"><em>LOGIN </em>登陆</div>
-    <div class="form panel-body">
-        <form id="loginForm" action="#">
-            <ul>
-                <li>
-                    <span>用户名：</span>
-                    <input id='login_name' class="text" value='zhangSan' type="text">
-                    <label>
-                        <input type="checkbox">
-                        <strong>记住我</strong>
-                    </label>
-                </li>
-                <li>
-                    <span>密&nbsp;&nbsp;&nbsp;码：</span>
-                    <input id='login_pass' class="text" type="password" value='111111' >
-                    <input  id="loginButton" class="btn" type="button" value="登陆">
-                </li>
-            </ul>
-        </form>
-    </div>
-    <p>
-        <a id="toRegist" href="#">新用户注册</a>
-        <a href="#">忘记密码</a>
-    </p>
-</div>
-
-
-<div id='tabsPanel' class="sync panel panel-default" ng-controller="Aaa">
-    <div class="panel-heading"><em>SYNC </em>同步标签  welcome,{{test}}<em id="username"></em>
-        <a id='logout' href=''>logout</a>
-    </div>
-    <ul class="tabList list-group" ng-repeat="(key,value) in tabData">
-
-        <div class="panel-heading">{{key}}
-        </div>
-        <li class="list-group-item" ng-repeat="tab in value">
-            <div class="tab_info ">
-                <img src="">
-                <div>
-                    <a class="title" href="#">{{tab.title}}</a>
-                    <p>{{tab.url}}</p>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <p>
-        <a href="#">查看同步历史记录</a>
-    </p>
-</div>
-
-<script src="js/popup.js"></script>
+<div class="container ng-view"></div>
+<input id="test" type="button"  ng-click="show()">
 </body>
 </html>

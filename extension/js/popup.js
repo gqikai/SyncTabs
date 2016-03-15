@@ -2,6 +2,10 @@
  * Created by gaoqikai on 16/3/6.
  */
 
+$('.regist').hide();
+$('.sync').hide();
+
+
 (function getTitleAndUrl(){
     chrome.tabs.query({currentWindow: true}, function(tabs){
         var allUrl = new Array();
@@ -142,6 +146,7 @@ $("#registButton").bind('click',function(){
                 $("#beforeLogin").css("display","none");
                 $("#afterLogin").css("display","block");
                 //alert(localStorage.username);
+
             }
         },
     });
@@ -162,6 +167,9 @@ $("#loginButton").bind('click',function(){
             if(msg == 'login succeed!'){
                 localStorage.username = $("#regist_name").val();
                 $("#username").text(localStorage.username);
+                $('.login').hide();
+                $('.regist').hide();
+                $('.sync').show();
             }
         },
     });

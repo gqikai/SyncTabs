@@ -4,3 +4,6 @@
 .tab_info div{width: 270px;;padding-left: 9px;}
 .tab_info a{position:relative; top:0;line-height: 15px; cursor: pointer;font-size: 15px;color: #000;white-space: nowrap;display: block; width: 200px; overflow: hidden;}
 .tab_info p{line-height: 10px; cursor: pointer;font-size: 5px;color:hsl(0, 0%, 70%);text-align: left;margin: 0 0;white-space: nowrap;display: block; width: 250px; overflow: hidden;}
+
+/*.login-container {width: 400px;}*/
+/*#panel-heading-black {background-color: #000000}*/

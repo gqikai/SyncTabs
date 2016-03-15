@@ -8,7 +8,7 @@
 +background:#f9f9f9;
 }
 
-body {font-size: 12px;font-family: "微软雅黑";}
+body {font-size: 12px;font-family: "微软雅黑";padding: 0; margin: 0;}
 ul{margin:0; padding:0;}
 
 .login, .regist, .sync{width: 400px; border: 1px solid #e5e5e5; border-radius: 5px;}
