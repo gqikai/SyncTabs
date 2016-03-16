@@ -3,45 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript">
+ <style>
+ </style>
+    <script>
+window.onload = function(){
+//获取框架中的window
+    var iframeWin = document.getElementById("iframe").contentWindow;
+    alert(iframeWin) // [object window]
 
-        $(function () {
-            Date.prototype.format = function(format)
-            {
-                var o =
-                {
-                    "M+" : this.getMonth()+1, //month
-                    "d+" : this.getDate(), //day
-                    "h+" : this.getHours(), //hour
-                    "m+" : this.getMinutes(), //minute
-                    "s+" : this.getSeconds(), //second
-                    "q+" : Math.floor((this.getMonth()+3)/3), //quarter
-                    "S" : this.getMilliseconds() //millisecond
-                }
+//向框架中发送消息
+    iframeWin.postMessage("一个消息", "http://blog.csdn.net/lee_magnum")
 
-                if(/(y+)/.test(format))
-                {
-                    format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
-                }
 
-                for(var k in o)
-                {
-                    if(new RegExp("("+ k +")").test(format))
-                    {
-                        format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-                    }
-                }
-                return format;
-            }
+}
 
-            var test = new Date(12332312).format("yyyy-MM-dd");
-            $('#test').val(test);
-        });
 
     </script>
 </head>
 <body>
-<input type="text" id="test">
+<iframe id="iframe" src="http://blog.csdn.net/lee_magnum" frameborder="0"></iframe>
 </body>
 </html>
