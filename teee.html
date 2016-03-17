@@ -3,33 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <meta charset="UTF-8">
+ <style>
+ </style>
+    <script>
+window.onload = function(){
+//获取框架中的window
+    var iframeWin = document.getElementById("iframe").contentWindow;
+    alert(iframeWin) // [object window]
+
+//向框架中发送消息
+    iframeWin.postMessage("一个消息", "http://blog.csdn.net/lee_magnum")
+
+
+}
+    </script>
 </head>
 <body>
-<style>
-    body {
-        width: 300px;
-        /*position: relative;*/
-        /*float: left;*/
-    }
-
-
-    .aside {
-        width: 100px;
-        height: 150px;
-        float: left;
-        background: #f66;
-    }
-
-    .main {
-        height: 200px;
-        background: #fcc;
-    }
-
-</style>
-<body>
-<div class="aside"></div>
-<div class="main"></div>
-</body>
+<iframe id="iframe" src="http://blog.csdn.net/lee_magnum" frameborder="0"></iframe>
 </body>
 </html>
