@@ -7,17 +7,20 @@
  </style>
     <script>
 window.onload = function(){
-//获取框架中的window
-    var iframeWin = document.getElementById("iframe").contentWindow;
-    alert(iframeWin) // [object window]
+    var oDiv = document.getElementById('test');
 
-//向框架中发送消息
-    iframeWin.postMessage("一个消息", "http://blog.csdn.net/lee_magnum")
+
+    var func = function () {
+        oDiv.style.opacity -= 0.001;
+        document.title = oDiv.style.opacity;
+    }
+
+    setInterval(func,10);
 
 }
     </script>
 </head>
 <body>
-<iframe id="iframe" src="http://blog.csdn.net/lee_magnum" frameborder="0"></iframe>
+<div id="test" style="height: 100px; background-color: #1b6d85;opacity: 1"></div>
 </body>
 </html>
